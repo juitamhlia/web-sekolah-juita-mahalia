@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fb;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #1a2332 0%, #2c3e50 100%);
+}
+
+#sidebar-wrapper .sidebar-heading {
+    background: rgba(0,0,0,0.2);
+}
+
+#sidebar-wrapper .list-group-item {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 12px 20px;
+    transition: background 0.2s;
+}
+#sidebar-wrapper .list-group-item:hover {
+    background: rgba(255,255,255,0.1);
+    border-left: 4px solid #0d6efd;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.card {
+    border-radius: 18px;
+    border: none;
+    transition: box-shadow 0.3s;
+}
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.navbar-light .navbar-brand {
+    font-weight: 700;
+}
+
+.table th {
+    border-top: none;
+}
+
+/* Toggle sidebar */
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: -260px;
+}
+#sidebar-wrapper {
+    transition: margin 0.25s;
+}
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: -260px;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: 0;
+    }
+}

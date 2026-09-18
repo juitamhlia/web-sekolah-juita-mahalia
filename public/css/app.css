@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-section {
+    background-size: cover;
+    background-position: center;
+}
+
+.hover-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.hover-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.hover-card img {
+    transition: transform 0.4s;
+}
+.hover-card:hover img {
+    transform: scale(1.05);
+}
+
+footer a:hover {
+    color: #ffc107 !important;
+    text-decoration: underline;
+}
+/* Fix carousel fade overlap */
+.carousel-fade .carousel-item {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.carousel-fade .carousel-item.active {
+    opacity: 1;
+    position: relative;
+}
+
+.carousel-fade .carousel-item-next.carousel-item-start,
+.carousel-fade .carousel-item-prev.carousel-item-end {
+    opacity: 1;
+}
