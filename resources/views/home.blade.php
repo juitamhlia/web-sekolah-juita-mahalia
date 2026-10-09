@@ -128,7 +128,7 @@
                     <div style="width:45px; height:4px; background:#228be6; border-radius:10px; margin-bottom:20px;"></div>
 
                     <p style="line-height: 1.85; font-size: .95rem; color:#4b5563; margin-bottom:20px;">
-                        Assalamu'alaikum Warahmatullahi Wabarakatuh, Puji syukur kita panjatkan ke hadirat Allah SWT atas limpahan rahmat dan karunia-Nya, sehingga SMKN 1 Cijati terus berkembang sebagai lembaga pendidikan vokasi yang unggul, berdaya saing, dan berorientasi pada kemajuan teknologi serta kebutuhan dunia kerja.
+                        Assalamu'alaikum Warahmatullahi Wabarakatuh, Puji kita panjatkan ke hadirat Allah SWT atas limpahan rahmat dan karunia-Nya, sehingga SMKN 1 Cijati terus berkembang sebagai lembaga pendidikan vokasi yang unggul, berdaya saing, dan berorientasi pada kemajuan teknologi serta kebutuhan dunia kerja.
                     </p>
                     <p style="line-height: 1.85; font-size: .95rem; color:#4b5563; margin-bottom:24px;">
                         Dalam era digitalisasi ini, kami berkomitmen untuk menghadirkan layanan pendidikan yang inovatif, berbasis teknologi, dan sesuai dengan perkembangan industri.
