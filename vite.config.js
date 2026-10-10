@@ -17,6 +17,7 @@ export default defineConfig({
                 'resources/css/ekstrakurikuler.css',
                 'resources/css/galeri.css',
                 'resources/js/galeri.js',
+                'resources/css/jurusan-detail.css',
             ],
             refresh: true,
         }),
