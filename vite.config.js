@@ -14,6 +14,7 @@ export default defineConfig({
                 'resources/css/berita.css',
                 'resources/css/ekstrakurikuler-detail.css',
                 'resources/js/ekstrakurikuler-detail.js',
+                'resources/css/ekstrakurikuler.css',
             ],
             refresh: true,
         }),
