@@ -15,6 +15,8 @@ export default defineConfig({
                 'resources/css/ekstrakurikuler-detail.css',
                 'resources/js/ekstrakurikuler-detail.js',
                 'resources/css/ekstrakurikuler.css',
+                'resources/css/galeri.css',
+                'resources/js/galeri.js',
             ],
             refresh: true,
         }),
