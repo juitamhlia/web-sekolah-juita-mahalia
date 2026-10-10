@@ -11,6 +11,7 @@ export default defineConfig({
                 'resources/js/home.js',
                 'resources/css/agenda.css',
                 'resources/css/berita-detail.css',
+                'resources/css/berita.css',
             ],
             refresh: true,
         }),
