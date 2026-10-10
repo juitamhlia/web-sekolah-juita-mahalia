@@ -4,244 +4,10 @@
 
 @section('content')
 
-<style>
-    :root {
-        --ed-blue: #0d63f0;
-        --ed-blue-dark: #0a4fc2;
-        --ed-blue-soft: #eaf2ff;
-        --ed-ink: #101827;
-        --ed-ink-soft: #5b6472;
-    }
+@push('styles')
+    @vite(['resources/css/ekstrakurikuler-detail.css'])
+@endpush
 
-    .ed-section {
-        background: #fff;
-        padding: 160px 0 80px;
-    }
-    .ed-container {
-        max-width: 1140px;
-        margin: 0 auto;
-        padding: 0 24px;
-    }
-
-    .ed-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 48px;
-        align-items: start;
-        margin-bottom: 60px;
-    }
-
-    /* ===== KOLOM KIRI: FOTO ===== */
-    .ed-main-photo {
-        width: 100%;
-        aspect-ratio: 4 / 3.2;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 20px 42px -20px rgba(16,24,39,.25);
-        margin-bottom: 16px;
-        background: var(--ed-blue-soft);
-    }
-    .ed-main-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .ed-thumb-row {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    .ed-thumb-nav {
-        flex-shrink: 0;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: #fff;
-        border: 1px solid #e5e9f2;
-        color: var(--ed-blue);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: background .2s ease, border-color .2s ease;
-    }
-    .ed-thumb-nav:hover {
-        background: var(--ed-blue-soft);
-        border-color: var(--ed-blue);
-    }
-    .ed-thumb-nav svg { width: 16px; height: 16px; }
-
-    .ed-thumb-track {
-        flex: 1;
-        display: flex;
-        gap: 10px;
-        overflow: hidden;
-    }
-    .ed-thumb {
-        flex: 1;
-        aspect-ratio: 1 / 1;
-        border-radius: 10px;
-        overflow: hidden;
-        cursor: pointer;
-        border: 2px solid transparent;
-        transition: border-color .2s ease;
-    }
-    .ed-thumb.active {
-        border-color: var(--ed-blue);
-    }
-    .ed-thumb img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* ===== KOLOM KANAN: KONTEN ===== */
-    .ed-badge {
-        display: inline-block;
-        font-size: .72rem;
-        font-weight: 700;
-        letter-spacing: .08em;
-        text-transform: uppercase;
-        color: var(--ed-blue);
-        background: var(--ed-blue-soft);
-        padding: 5px 14px;
-        border-radius: 999px;
-        margin-bottom: 16px;
-    }
-    .ed-title {
-        font-weight: 400;
-        font-size: clamp(1.8rem, 3.4vw, 2.4rem);
-        color: var(--ed-ink);
-        letter-spacing: -0.01em;
-        text-transform: uppercase;
-        margin-bottom: 16px;
-    }
-    .ed-desc {
-        font-size: 1rem;
-        line-height: 1.85;
-        color: var(--ed-ink-soft);
-        margin-bottom: 28px;
-    }
-
-    /* ===== CARD FOKUS KEGIATAN ===== */
-    .ed-fokus-card {
-        background: #fff;
-        border: 1px solid #e9edf5;
-        box-shadow: 0 16px 34px -24px rgba(16,24,39,.20);
-        border-radius: 20px;
-        padding: 28px 26px;
-    }
-    .ed-fokus-card h3 {
-        font-weight: 800;
-        font-size: 1.05rem;
-        color: var(--ed-ink);
-        margin-bottom: 4px;
-    }
-    .ed-fokus-card > p {
-        font-size: .86rem;
-        color: var(--ed-ink-soft);
-        margin-bottom: 20px;
-    }
-    .ed-fokus-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-    }
-    .ed-fokus-item {
-        background: #fff;
-        border: 1px solid #e9edf5;
-        border-radius: 14px;
-        padding: 18px 14px;
-        text-align: center;
-    }
-    .ed-fokus-icon {
-        width: 42px;
-        height: 42px;
-        border-radius: 12px;
-        background: var(--ed-blue-soft);
-        color: var(--ed-blue);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 12px;
-    }
-    .ed-fokus-icon svg { width: 20px; height: 20px; }
-    .ed-fokus-item h5 {
-        font-weight: 700;
-        font-size: .88rem;
-        color: var(--ed-ink);
-        margin-bottom: 6px;
-    }
-    .ed-fokus-item p {
-        font-size: .78rem;
-        color: var(--ed-ink-soft);
-        line-height: 1.5;
-        margin: 0;
-    }
-
-    /* ===== INFO CARD HORIZONTAL ===== */
-    .ed-info-card {
-        background: #fff;
-        border: 1px solid #e9edf5;
-        border-radius: 18px;
-        box-shadow: 0 16px 34px -24px rgba(16,24,39,.20);
-        padding: 30px 10px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-    }
-    .ed-info-item {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        padding: 0 24px;
-        position: relative;
-    }
-    .ed-info-item + .ed-info-item::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 6px;
-        bottom: 6px;
-        width: 1px;
-        background: #e9edf5;
-    }
-    .ed-info-icon {
-        flex-shrink: 0;
-        width: 42px;
-        height: 42px;
-        border-radius: 12px;
-        background: var(--ed-blue-soft);
-        color: var(--ed-blue);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .ed-info-icon svg { width: 20px; height: 20px; }
-    .ed-info-label {
-        font-size: .74rem;
-        color: var(--ed-ink-soft);
-        font-weight: 600;
-        margin-bottom: 3px;
-    }
-    .ed-info-value {
-        font-size: .92rem;
-        font-weight: 700;
-        color: var(--ed-ink);
-        line-height: 1.3;
-    }
-
-    @media (max-width: 900px) {
-        .ed-grid { grid-template-columns: 1fr; }
-        .ed-info-card { grid-template-columns: 1fr 1fr; row-gap: 22px; }
-        .ed-info-item + .ed-info-item::before { display: none; }
-        .ed-fokus-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 480px) {
-        .ed-section { padding: 140px 0 56px; }
-        .ed-info-card { grid-template-columns: 1fr; }
-    }
-</style>
 
 <section class="ed-section">
     <div class="ed-container">
@@ -274,19 +40,19 @@
 
                 @if($semuaFoto->count() > 1)
                 <div class="ed-thumb-row">
-                    <div class="ed-thumb-nav" onclick="edScrollThumb(-1)">
+                    <div class="ed-thumb-nav" data-thumb-dir="-1">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
                     </div>
 
                     <div class="ed-thumb-track" id="edThumbTrack">
                         @foreach($semuaFoto as $i => $foto)
-                            <div class="ed-thumb {{ $i === 0 ? 'active' : '' }}" onclick="edSetActiveThumb(this)">
+                            <div class="ed-thumb {{ $i === 0 ? 'active' : '' }}">
                                 <img src="{{ asset('storage/' . $foto) }}" alt="{{ $ekstrakurikuler->nama }} {{ $i + 1 }}">
                             </div>
                         @endforeach
                     </div>
 
-                    <div class="ed-thumb-nav" onclick="edScrollThumb(1)">
+                    <div class="ed-thumb-nav" data-thumb-dir="1">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
                     </div>
                 </div>
@@ -452,28 +218,9 @@
     </div>
 </section>
 
-<script>
-    function edSetActiveThumb(el) {
-        document.querySelectorAll('.ed-thumb').forEach(t => t.classList.remove('active'));
-        el.classList.add('active');
 
-        const img = el.querySelector('img');
-        const mainImg = document.getElementById('edMainPhotoImg');
-        if (img && mainImg) {
-            mainImg.src = img.src;
-        }
-    }
-
-    function edScrollThumb(direction) {
-        const thumbs = Array.from(document.querySelectorAll('.ed-thumb'));
-        const activeIndex = thumbs.findIndex(t => t.classList.contains('active'));
-        let nextIndex = activeIndex + direction;
-
-        if (nextIndex < 0) nextIndex = thumbs.length - 1;
-        if (nextIndex >= thumbs.length) nextIndex = 0;
-
-        edSetActiveThumb(thumbs[nextIndex]);
-    }
-</script>
+@push('scripts')
+    @vite(['resources/js/ekstrakurikuler-detail.js'])
+@endpush
 
 @endsection
