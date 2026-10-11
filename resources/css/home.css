@@ -360,7 +360,7 @@
 }
 
 .berita-tanggal {
-    color: var(--brand-blue);
+    color: #2f5fe0;
     font-size: .88rem;
     font-weight: 600;
 }
@@ -385,12 +385,12 @@
 }
 
 .berita-link, .agenda-link {
-    color: var(--brand-blue);
+    color: #2f5fe0;
     font-weight: 600;
     text-decoration: none;
 }
 .berita-link:hover, .agenda-link:hover {
-    color: #3d8ba3;
+    color: #1d4ed8;
 }
 
 .carousel-nav-btn {
@@ -419,6 +419,7 @@
     margin-bottom: 16px;
     transition: transform 0.25s ease;
 }
+
 .agenda-item::before {
     content: '';
     position: absolute;
@@ -430,18 +431,20 @@
     background: rgba(86, 173, 197, 0.45);
     transition: background 0.25s ease;
 }
+
 .agenda-item:hover {
     transform: translateX(4px);
 }
+
 .agenda-item:hover::before {
     background: rgba(86, 173, 197, 0.9);
 }
+
 .agenda-tanggal {
-    color: var(--brand-blue);
+    color: #2f5fe0;
     font-size: .82rem;
     font-weight: 600;
 }
-
 
 /* ============================================================
    4. JURUSAN (KONSENTRASI KEAHLIAN)
