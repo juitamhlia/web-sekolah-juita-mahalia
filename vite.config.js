@@ -18,6 +18,7 @@ export default defineConfig({
                 'resources/css/galeri.css',
                 'resources/js/galeri.js',
                 'resources/css/jurusan-detail.css',
+                'resources/css/profil.css',
             ],
             refresh: true,
         }),
